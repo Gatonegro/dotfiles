@@ -1,0 +1,26 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : newdoc: Basic document structure.
+# --
+% ${1:filename}
+% ${2:Document Title}
+%
+% (c) ${3:year} ${4:Author Name} <${5:Author Email}>
+%     ${6:webpage}
+%
+\documentclass[11pt]{article}
+\usepackage[${latin1}]{inputenc}
+
+\begin{document}
+
+\title{$2}
+\author{$4\\
+$5\\
+$6 }
+
+\maketitle
+
+\tableofcontents
+
+$0
+
+\end{document}

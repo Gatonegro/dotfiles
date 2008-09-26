@@ -1,0 +1,7 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : sec: \section
+# --
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$1}
+$0
+
