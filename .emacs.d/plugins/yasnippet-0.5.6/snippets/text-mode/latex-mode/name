@@ -1,4 +1,0 @@
-#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
-#name : name: \name{...}
-# --
-\name{$1} $0
