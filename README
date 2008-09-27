@@ -1,11 +1,11 @@
-Ryan Bates Dot Files
+Francisco Diéguez Dot Files
 
 These are config files to set up a system the way I like it.
 
 
-Installation
+Installation (based in Ryan Bates Instalation Script)
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/frandieguez/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
   # edit ~/.gitconfig and personalize it
