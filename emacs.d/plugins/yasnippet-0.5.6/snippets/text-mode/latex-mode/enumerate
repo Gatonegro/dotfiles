@@ -1,0 +1,7 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : \begin{enumerate} ... \end{enumerate}
+# --
+\begin{enumerate}
+	$0
+\end{enumerate}
+

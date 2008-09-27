@@ -1,0 +1,4 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : superscript: $^{...}$
+# --
+$^{$1}$ $0
