@@ -1,90 +1,36 @@
-# file template for ~/.zsh/zshprompt
-# copy to ~/.zsh directory and edit by hand, or use function switch_prompt
-# to do this automatically
-#  { ======> }  indicates where user might want to edit this file
+#if [[ "$TERM" != "dumb" ]]; then
+#	#export PROMPT="%{$fg[blue]%}%1~%{%(!.$fg[red].$fg[green])%}>%{$reset_color%} "
+#	export PROMPT='%{$fg_bold[green]%}%m%{$reset_color%}.%{$fg[red]%}%c %{$fg_bold[red]%}$(git_prompt_info)%{$fg[blue]%}>%{$reset_color%}'
+#	export RPROMPT='%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%} '
+#else
+#  export PROMPT="%(?..[%?] )%n:%1~> "
+#fi
 
 
-###################################################################################
-###################################################################################
 
-# Add optional arguments manually to the prompt here:
-# default is no arguments (an empty array)
-#  { ======> }
-       PROMPT_ARG_ARRAY=(  )
-
-#  Example for prompt off:
-#  ARG_ARRAY=(default red green)
-#  Issue the command " prompt_${PROMPT_CHOICE}_help " to see available options.
-
-###################################################################################
-###################################################################################
-
-autoload -U colors
-colors
-
-# This gets set automatically using switch_prompt or can be edited manually
-# to correspond to the (middle) name of the desired prompt function in $fpath
-
-#  { ======> }
-
-# PROMPT_CHOICE='kerbaugh'
-  PROMPT_CHOICE='off'
-  
-
-###################################################################################
-
-# Turn off the previous prompt:
-
-PS1="%# "
-PS2="> "
-
-prompt_opts=( cr percent )
-
-# Now set prompt to the user's choice:
-
-prompt $PROMPT_CHOICE  $PROMPT_ARG_ARRAY
-
- 
-###################################################################################
+#if [[ $TERM == "screen"* ]]; then
+#  #TAB_TITLE_PREFIX='"$PROMPT_CHAR"'
+#  TAB_TITLE_PROMPT='`print -Pn "%~" | sed "s:\([~/][^/]*\)/.*/:\1...:"`'
+#  TAB_TITLE_EXEC='`case $cmd[1]:t in ; "sudo") echo $cmd[2]:t;; *) echo $cmd[1]:t;; esac`'
+#
+#  function screen_set(){
+#    #  (%t) en screen
+#    print -nR $'\033k'"$1"$'\033'\\\
+#  }
+#
+#  function preexec()  {
+#    local -a cmd; cmd=(${(z)1}) # the command string
+#    eval "tab_title=$TAB_TITLE_PREFIX$TAB_TITLE_EXEC"
+#    screen_set "$tab_title"
+#  }
+#
+#  function precmd()  {
+#    eval "tab_title=$TAB_TITLE_PREFIX$TAB_TITLE_PROMPT"
+#    screen_set $tab_title
+#  }
+#fi
 
 
-# get the name of the branch we are on
-git_prompt_info() {
-  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-  echo "(${ref#refs/heads/})"
-}
 autoload -U colors
 colors
 setopt prompt_subst
-
-if [[ "$TERM" != "dumb" ]]; then
-	#export PROMPT="%{$fg[blue]%}%1~%{%(!.$fg[red].$fg[green])%}>%{$reset_color%} "
-	export PROMPT='%{$fg_bold[green]%}%m%{$reset_color%}.%{$fg[red]%}%c %{$fg_bold[red]%}$(git_prompt_info)%{$fg[blue]%}>%{$reset_color%}'
-	export RPROMPT='%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%} '
-else
-  export PROMPT="%(?..[%?] )%n:%1~> "
-fi
-
-
-
-if [[ $TERM == "screen"* ]]; then
-  #TAB_TITLE_PREFIX='"$PROMPT_CHAR"'
-  TAB_TITLE_PROMPT='`print -Pn "%~" | sed "s:\([~/][^/]*\)/.*/:\1...:"`'
-  TAB_TITLE_EXEC='`case $cmd[1]:t in ; "sudo") echo $cmd[2]:t;; *) echo $cmd[1]:t;; esac`'
-
-  function screen_set(){
-    #  (%t) en screen
-    print -nR $'\033k'"$1"$'\033'\\\
-  }
-
-  function preexec()  {
-    local -a cmd; cmd=(${(z)1}) # the command string
-    eval "tab_title=$TAB_TITLE_PREFIX$TAB_TITLE_EXEC"
-    screen_set "$tab_title"
-  }
-
-  function precmd()  {
-    eval "tab_title=$TAB_TITLE_PREFIX$TAB_TITLE_PROMPT"
-    screen_set $tab_title
-  }
-fi

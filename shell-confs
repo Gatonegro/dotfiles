@@ -13,12 +13,3 @@ export MOZILLA_FIVE_HOME=/opt/firefox/firefox
 export SVN_EDITOR="mate -w"
 
 
-if [[ "$TERM" != "dumb" ]]; then
-	#export PROMPT="%{$fg[blue]%}%1~%{%(!.$fg[red].$fg[green])%}>%{$reset_color%} "
-	export PROMPT='%{$fg_bold[green]%}%m%{$reset_color%}.%{$fg[red]%}%c %{$fg_bold[red]%}$(git_prompt_info)%{$fg[blue]%}>%{$reset_color%}'
-	#export RPROMPT='%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%} '
-else
-  export PROMPT="%(?..[%?] )%n:%1~> "
-fi
-
-

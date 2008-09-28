@@ -1,0 +1,23 @@
+require 'autotest/redgreen'
+require 'autotest/html_report'
+require 'autotest/menu'
+module Autotest::Growl
+ 
+  def self.growl msg, options={}
+    salida = "growlnotify -n autotest –image \"#{options[:img]}\"  -p #{options[:pri]} -d #{rand(100)} -m \"#{msg}\" \"Tests\" #{options[:sticky]}"
+    system salida
+  end
+ 
+  Autotest.add_hook :ran_command do |at|
+    results = [at.results].flatten.join("\n")
+    output = results.slice(/(\d+)\s+assertions?,\s*(\d+)\s+failures?,\s*(\d+)\s+errors?/)
+    failures = $~[3].to_i + $~[2].to_i
+    options = (failures > 0)? {:img=>"/Users/#{ENV["USER"]}/Pictures/Rails/fail.png", :pri => 0, :sticky => "" } : {:img => "/Users/#{ENV["USER"]}/Pictures/Rails/ok.png", :pri => 0,:sticky => "" }
+    output = output.gsub(/assertions/, "aserciones").gsub(/failures/, "fallos").gsub(/errors/, "errores")
+    if output
+      growl "#{output}", options
+    end
+  end
+end
+     
+
