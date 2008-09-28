@@ -6,6 +6,10 @@ alias ls="ls -F"
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
+export EDITOR="/usr/bin/mate -w"
+export SVNEDITOR="/usr/bin/mate -w"
+alias irb='irb --readline -r irb/completion -rubygems' # use readline, completion and require rubygems by default for irb
+alias dns='sudo lookupd -flushcache'
 
 # git
 alias gl='git pull'
@@ -17,14 +21,40 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 
+#Subversion
+alias svnup='svn update'
+alias sst='svn status' 
+alias scom='svn commit'
+alias sd='svn diff | mate'
+alias slog='svn log | mate'
+alias sex='svn export'
+alias stm='svn st | grep ^M'
+
 # rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
+alias sc='./script/console'
+alias ss='./script/server'
+alias sg='./script/generate'
 alias a='autotest -rails'
 alias tlog='tail -f log/development.log'
 alias scaffold='script/generate nifty_scaffold'
 alias migrate='rake db:migrate db:test:clone'
+alias mr='mongrel_rails'
+alias tt="autotask 'rake test::recent' app test"
 
 # commands starting with % for pasting from web
 alias %=' '
+
+#TextMate
+alias et='mate . &'
+alias ett='mate app config lib db public test vendor/plugins &'
+
+#HTTP-server
+alias startmysql='sudo /opt/local/bin/mysqld_safe5 &'
+alias startapache='sudo apachectl start'
+alias ng="sudo nginxctl"
+
+# Folders
+alias cr="cd /Users/fran/Code/Rails/"
+
+# System
+alias psaux="ps -ax -o pid -o command"

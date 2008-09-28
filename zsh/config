@@ -5,8 +5,8 @@ else
 fi
 
 EDITOR='mate -w'
-PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+
+
 
 cdpath=($cdpath ~/code)
 fpath=(~/.zsh/functions $fpath)
@@ -34,12 +34,17 @@ setopt APPEND_HISTORY # adds history
 setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
+setopt autopushd
 
 zle -N newtab
 
-# bindkey '^[^[[D' backward-word
-# bindkey '^[^[[C' forward-word
-# bindkey '^[[5D' beginning-of-line
-# bindkey '^[[5C' end-of-line
-# bindkey '^[[3~' delete-char
-# bindkey '^[^N' newtab
+
+# Bind Keys
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[[5D' beginning-of-line
+bindkey '^[[5C' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[^N' newtab
+bindkey '^?' backward-delete-char
+bindkey '^[[3~' delete-char

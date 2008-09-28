@@ -2,13 +2,17 @@
 	name = Fran Diéguez
 	email = fran.dieguez@mabishu.com
 [alias]
+	st = status
+	ci = commit
 	co = checkout
+	br = branch
 [color]
+	ui = auto
 	diff = auto
 	status = auto
 	branch = auto
 [core]
-	excludesfile = /Users/rbates/.gitignore
+	excludesfile = /Users/frandieguez/.gitignore
 	editor = mate -w
 [apply]
 	whitespace = nowarn
