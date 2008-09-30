@@ -1,9 +1,0 @@
-#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
-#name : sec: \section
-# --
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{$1}
-\label{$2}
-
-$0
-
