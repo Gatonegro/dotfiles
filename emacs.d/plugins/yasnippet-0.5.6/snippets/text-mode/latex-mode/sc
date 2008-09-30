@@ -1,0 +1,4 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : sc: \textsc{...}
+# --
+\textsc{$1} $0

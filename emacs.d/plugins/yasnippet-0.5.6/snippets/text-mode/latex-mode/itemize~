@@ -1,0 +1,8 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : \begin{itemize} ... \end{itemize}
+# --
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	$0
+\end{itemize}
+

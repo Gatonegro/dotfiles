@@ -1,0 +1,4 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : emphasized text: \textit{...}
+# --
+\textit{$1}$0

@@ -1,0 +1,4 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : emphasized text: \emph{...}
+# --
+\emph{$1} $0

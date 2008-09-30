@@ -1,0 +1,6 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : sssec: \subsubsection
+# --
+\subsubsection{$1}
+$0
+

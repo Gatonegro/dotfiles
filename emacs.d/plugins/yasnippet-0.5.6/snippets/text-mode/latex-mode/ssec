@@ -1,0 +1,6 @@
+#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
+#name : ssec: \subsection
+# --
+%%%%%%%%%%%%%${1:$(make-string (string-width text) ?\%)}
+\subsection{${1:Title}}
+$0
