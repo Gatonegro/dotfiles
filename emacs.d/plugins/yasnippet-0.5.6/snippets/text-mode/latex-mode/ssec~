@@ -1,7 +1,0 @@
-#contributor : Denis Fernandez Cabrera <denis@ceibes.org>
-#name : ssec: \subsection
-# --
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{$1}
-$0
-

@@ -1,18 +1,23 @@
 #contributor : Denis Fernandez Cabrera <denis@ceibes.org>
-#name : doc: Basic document structure.
+#name : newdoc: Basic document structure.
 # --
-% Curriculo.tex
+% ${1:filename}
+% ${2:Document Title}
 %
-% (c) 2007 Denís Fernández Cabrera <denis@ceibes.org>
-%          http://gatonegro.ceibes.org
-% Baseado en: http://matthewm.boedicker.org/code/latex_resume_tips.php
+% (c) ${3:year} ${4:Author Name} <${5:Author Email}>
+%     ${6:webpage}
 %
 \documentclass[11pt]{article}
-\usepackage[${1:latin1}]{inputenc}
+\usepackage[${latin1}]{inputenc}
 
-\renewcommand{\v}[1]{\texttt{#1}}
-\newcommand{\s}[1]{\textbf{#1}}
 \begin{document}
+
+\title{$2}
+\author{$4\\
+$5\\
+$6 }
+
+\maketitle
 
 \tableofcontents
 

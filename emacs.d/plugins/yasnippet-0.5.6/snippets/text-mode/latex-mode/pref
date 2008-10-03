@@ -1,5 +1,4 @@
 #contributor : Denis Fernandez Cabrera <denis@ceibes.org>
 #name : \pref{...}
 # --
-\pref{$1}
-$0
+\pageref{$1}$0

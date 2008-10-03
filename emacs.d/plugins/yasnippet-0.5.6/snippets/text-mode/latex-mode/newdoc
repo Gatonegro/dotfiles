@@ -10,6 +10,10 @@
 \documentclass[11pt]{article}
 \usepackage[${latin1}]{inputenc}
 
+\newcommand{\apartado}[1]{{
+{\Large \textbf{#1}}
+}}
+
 \begin{document}
 
 \title{$2}
